@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    let a = prompt('nhap chuoit bat ky')
+    let b = prompt('nhap ky tu bat ky')
+    str = a.split('')
+
+    function checkAndCount(array, char) {
+        let count = 0
+        for (let i = 0; i < array.length; i++) {
+            if (char == array[i]) {
+                count++
+            }
+        }
+        if (count > 0) {
+            return count
+        }return -1
+    }
+
+    alert(checkAndCount(str, b))
+</script>
+
+</body>
+</html>
