@@ -12,17 +12,23 @@
 
     let a = parseInt(prompt('nhap so thu nhat'))
     let b = parseInt(prompt('nhap so thu hai'))
-    let sum = 0
-    function calculate(){
-        if (a>b){
-            alert('so thu nhat lon hon so thu hai')
-            return a
+    function calculate(c,d){
+        if (c>d){
+            return c>d
         }
         else{
-            sum = a+b
-        }alert('tong hai so la ' +sum)
-    }calculate()
+        }return c+d
+    }alert(calculate(a,b))
 
+
+
+// function compare(frist,second){
+//         if (frist>second){
+//             return "st1>st2"
+//         }else {
+//             return frist+second
+//         }
+// }alert(compare(1,2))
 
 
 </script>
