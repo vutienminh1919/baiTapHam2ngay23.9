@@ -5,16 +5,57 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<div>
     <h1> Add New Product</h1>
-    <input type="text"><button>Add</button>
+    <input type="text" id="addProduct" placeholder="Enter here">
+    <button onclick="add()">Add</button>
     <h1>Display All Product</h1>
     <p>Product Name</p>
+</div>
+<table id="displayArea" border="1" style="border-collapse: collapse">
 
-</form>
+</table>
+
 <script>
+    let list = ['IP6', 'SamSungGalaxy', 'Xiaomi9', 'Vsmart4', 'Nokia6']
+    displayAll()
 
+    function displayAll() {
+        let str = '<tr>\n' +
+            '           <td>Product Name</td>\n' +
+            '<td></td>\n' +
+            '<td>' + list.length + ' product</td>\n' +
+            '</tr>';
+        for (let i = 0; i < list.length; i++) {
+            str += '<tr><td>' + list[i] + '</td>' +
+                '<td><button onclick="showEdit(' + i + ')">Edit</button></td>' +
+                '<td><button onclick="remove(' + i + ')">Delete</button></td></tr>'
+        }
+        document.getElementById('displayArea').innerHTML = str
+    }
 
+    function add() {
+        let product = document.getElementById('addProduct').value
+        document.getElementById('addProduct').value = " "
+        list.push(product)
+       displayAll()
+    }
+
+    function remove(inDex) {
+        list.splice(inDex, 1)
+        displayAll()
+    }
+
+    function showEdit(inDex) {
+        let str = ' ';
+        str = '<input type="text" id="edit" value="' + list[inDex] + '"><button onClick="save(' + inDex +')">Save</button>';
+        document.getElementById('edit').innerHTML = str;
+    }
+function save(inDex){
+        list[inDex] = document.getElementById('edit').value;
+        document.getElementById('edit').innerHTML = "";
+        displayAll()
+}
 
 </script>
 

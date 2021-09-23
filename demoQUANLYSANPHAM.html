@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<STYLE>
+    td {
+        width: 150px;
+    }
+</STYLE>
+<body>
+<input id="txt">
+<button onclick="create()">Add</button>
+<table id="list">
+</table>
+<div id="editForm"></div>
+<script>
+    // CRUD --> CREAT - READ - UPDATE - DELETE
+    let listProduct = ['Ip3', 'S10', 'X18', 'M20', 'Ip12']
+    display()
+
+    function display() {
+        let str = '<tr><td>product Name</td><td></td><td>' + listProduct.length + ' product</td></tr>';
+        for (let i = 0; i < listProduct.length; i++) {
+            str += `<tr>`;
+            str += `<td>${listProduct[i]}</td>`
+            // str+= '<td>'+ listProduct[i]+'</td>' cach 2
+            str += `<td><button onclick="showEditForm(${i})">Edit</button></td>`
+            str += `<td><button onclick="remove(${i})">Delete</button></td>`
+            str += `<tr>`;
+        }
+        document.getElementById('list').innerHTML = str
+    }
+
+    function create() {
+        let product = document.getElementById('txt').value;
+        document.getElementById('txt').value = ''
+        listProduct.push(product)
+        display()
+    }
+
+    function showEditForm(index) {
+        let str = `<input id = "txtEdit" value= "${listProduct[index]}"><button onclick="saveEdit(${index})">Save</button>`
+        document.getElementById('editForm').innerHTML = str
+    }
+    function saveEdit(index) {
+        let newProduct = document.getElementById('txtEdit').value
+        listProduct[index] = newProduct
+        display()
+        document.getElementById('editForm').innerHTML = ''
+    }
+function remove(index){
+        listProduct.splice(index,1)
+    display()
+}
+
+</script>
+</body>
+</html>
