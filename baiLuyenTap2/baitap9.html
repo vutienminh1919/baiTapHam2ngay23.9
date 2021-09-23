@@ -8,9 +8,15 @@
 <script>
     // Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
     // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
-    let a = prompt('nhap chuoit bat ky')
+    let a = []
+    while (true) {
+        let inp = prompt('nhap vao mang ky tu bat ky ')
+        if (inp == -1) {
+            break
+        }
+        a.push(inp)
+    }
     let b = prompt('nhap ky tu bat ky')
-    str = a.split('')
 
     function checkAndCount(array, char) {
         let count = 0
@@ -21,10 +27,12 @@
         }
         if (count > 0) {
             return count
-        }return -1
+        }
+        return -1
     }
 
-    alert(checkAndCount(str, b))
+    alert(checkAndCount(a, b))
+    alert(a)
 </script>
 
 </body>

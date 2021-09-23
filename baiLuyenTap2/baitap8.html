@@ -8,11 +8,20 @@
 <script>
     //Viết hàm truyền vào mảng số nguyên bất kỳ,
     // sau đó đảo ngược mảng số nguyên đó.
-    let a =prompt('nhap chuoi bat ky')
-    str = a.split('')
-    function reverse(array){
+
+    let a = []
+    while (true) {
+        let inp = prompt('nhap vao mang ( an -1 de dung) ')
+        if (inp == -1) {
+            break
+        }
+        a.push(inp)
+    }
+    function reverse(array) {
         return array.reverse()
-    }alert(reverse(str))
+    }
+    alert(reverse(a))
+
 
 </script>
 
