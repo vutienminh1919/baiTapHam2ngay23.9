@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<input type="text" id="dauVao">
+<button onclick="isPalindrome()">Check</button>
+<p id="result"></p>
+
+<script>
+    function isPalindrome() {
+        let s = document.getElementById('dauVao').value
+        let frist = 0
+        let last = s.length - 1
+        let check = true
+        while (frist < last) {
+            if (s[frist] !== s[last]) {
+                check = false
+                break
+            }
+            frist++
+            last--
+        }
+        if (check === true) {
+            document.getElementById('result').innerHTML = 'day la tu doi xung'
+        } else {
+            document.getElementById('result').innerHTML = 'day khong phai la tu doi xung'
+        }
+    }
+
+
+</script>
 </body>
 </html>

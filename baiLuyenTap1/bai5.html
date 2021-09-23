@@ -11,15 +11,16 @@
     let c = prompt('nhap vao ten ngoi sao bat ky')
 
     function checkStar(array1, array2, starName) {
+        let result;
         for (let i = 0; i < array1.length; i++) {
             if (starName === array1[i]) {
-                return array2[i]
+                result =  array2[i]
                 break
             }else {
-                return " khong tim thay"
+                result  = " khong tim thay"
             }
         }
-        alert(array2[i])
+        return result
     }
     alert(checkStar(a, b, c))
 </SCRIPT>
